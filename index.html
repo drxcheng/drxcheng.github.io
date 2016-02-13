@@ -82,9 +82,18 @@
         -webkit-border-radius: 50%;
            -moz-border-radius: 50%;
                 border-radius: 50%;
-        background: url(pic.jpg);
+        background-image: url(pic.jpg);
         background-size: 8em 8em, cover;
+        cursor: pointer;
+        -webkit-transition: all .5s ease-in;
+           -moz-transition: all .5s ease-in;
+                transition: all .5s ease-in;
       }
+
+      .easter-egg {
+        background-image: url(easter-egg.jpg);
+      }
+
       .intro p {
         width: 100%;
         text-align: center;
@@ -115,12 +124,15 @@
 
       footer {
         background-color: #202020;
-        font-family: 'Roboto Slab', serif;
         color: #fefefe;
-        font-size: .8em;
         font-weight: 100;
         text-align: center;
         padding: 40px 0;
+      }
+      footer span {
+        display: block;
+        font-size: 0.8em;
+        margin-bottom: 40px;
       }
       footer ul {
         list-style: none;
@@ -133,8 +145,8 @@
       footer ul li {
         display: block;
         color: #fefefe;
-        width: 3.8em;
-        height: 3.8em;
+        width: 3em;
+        height: 3em;
         border: 2px solid #fefefe;
         -webkit-border-radius: 50%;
            -moz-border-radius: 50%;
@@ -144,12 +156,17 @@
                 transition: all .2s ease-in;
       }
       footer ul li i.fa {
-        font-size: 2em;
+        font-size: 1.5em;
         line-height: 2em;
       }
       footer ul li:hover {
         color: #b5b5b5;
         border: 2px solid #b5b5b5;
+      }
+
+      footer .copyright {
+        font-family: 'Roboto Slab', serif;
+        font-size: .8em;
       }
 
       @media (max-width: 640px) {
@@ -262,7 +279,7 @@
       </header>
 
       <section class="row intro">
-        <div class="avatar"></div>
+        <div class="avatar" id="avatar" onclick="clickAvatar()"></div>
         <p>Hi, I am Xu Cheng, aka. DrXCheng.</p>
       </section>
 
@@ -291,6 +308,8 @@
       </section>
 
       <footer>
+        <span>Can you find an Easter Egg on this page? <em>Hint: avatar.</em></span>
+
         <ul class="social">
           <a href="mailto:xu@drxcheng.com" target="_blank"><li><i class="fa fa-envelope"></i></li></a>
           <a href="https://twitter.com/drxcheng" target="_blank"><li><i class="fa fa-twitter"></i></li></a>
@@ -311,5 +330,23 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-73740982-1', 'auto');
     ga('send', 'pageview');
+  </script>
+
+  <script>
+    var TARGET = 7;
+    var clickCount = 0;
+    var avatar = document.getElementById('avatar');
+    var defaultClass = avatar.className;
+
+    var clickAvatar = function () {
+      clickCount++;
+
+      if (clickCount >= TARGET) {
+        avatar.className += ' easter-egg';
+        clickCount = 0;
+      } else if (clickCount === 1) {
+        avatar.className = defaultClass;
+      }
+    }
   </script>
 </html>

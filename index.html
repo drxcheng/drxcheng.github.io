@@ -90,6 +90,12 @@
                 transition: all .5s ease-in;
       }
 
+
+      .hidden-egg {
+        background-image: url(easter-egg.jpg);
+        width: 0px;
+        height: 0px;
+      }
       .easter-egg {
         background-image: url(easter-egg.jpg);
       }
@@ -279,6 +285,7 @@
       </header>
 
       <section class="row intro">
+        <div class="hidden-egg"></div>
         <div class="avatar" id="avatar" onclick="clickAvatar()"></div>
         <p>Hi, I am Xu Cheng, aka. DrXCheng.</p>
       </section>

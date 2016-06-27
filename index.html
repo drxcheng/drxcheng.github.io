@@ -68,11 +68,15 @@
         margin: 0;
       }
 
-      .row {
-        width: 620px;
+      .container {
+        max-width: 620px;
         margin: 0 auto;
       }
-      .row:not(:last-child) {
+
+      .container section {
+        position: relative;
+      }
+      .container section:not(:last-child) {
         border-bottom: 1px solid #b5b5b5;
       }
 
@@ -91,7 +95,6 @@
                 transition: all .5s ease-in;
       }
 
-
       .hidden-egg {
         background-image: url(easter-egg.jpg);
         width: 0px;
@@ -108,25 +111,21 @@
       }
 
       .content {
-        width: 100%;
+        width: 380px;
         padding: 40px 0;
         font-size: 1.2em;
         line-height: 2em;
         text-align: justify;
       }
-      .skill-set {
-        font-style: italic;
-      }
-
-      .content-left,
-      .content-right {
-        width: 380px;
-      }
-      .content-left {
+      .text-on-left .content {
         margin-right: 240px;
       }
-      .content-right {
+      .text-on-right .content {
         margin-left: 240px;
+      }
+
+      .skill-set {
+        font-style: italic;
       }
 
       footer {
@@ -176,13 +175,51 @@
         font-size: .8em;
       }
 
+      .content-bg {
+        font-family: 'icomoon';
+        font-size: 13em;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #b5b5b5;
+        height: 1em;
+        width: 1em;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        z-index: -1;
+        opacity: 0.3;
+      }
+
+      .dev .content-bg:before {
+        content: "\e905";
+      }
+      .youtube .content-bg:before {
+        content: "\e906";
+      }
+      .research .content-bg:before {
+        content: "\e904";
+      }
+      .text-on-left .content-bg {
+        right: 0;
+      }
+      .text-on-right .content-bg {
+        left: 0;
+      }
+
       @media (max-width: 640px) {
         header h1 {
           font-size: 3em;
           line-height: 2em;
         }
 
-        .row {
+        .container {
           width: 100%;
           margin: 0;
         }
@@ -203,18 +240,20 @@
         }
 
         .content {
+          width: 100%;
+          margin: 0px !important;
           padding: 30px 0;
           font-size: 1.1em;
           line-height: 1.75em;
         }
-
-        .content-left,
-        .content-right {
-          width: 100%;
-          margin: 0px;
-        }
         .content p {
           padding: 0 30px;
+        }
+        .content-bg {
+          font-size: 10em;
+          right: 0;
+          left: 0;
+          margin: auto;
         }
       }
 
@@ -225,110 +264,60 @@
           width: 100%;
         }
       }
-
-      .content-bg {
-        font-family: 'icomoon' !important;
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        color: #b5b5b5;
-        position: absolute;
-        z-index: -1;
-        opacity: 0.3;
-      }
-
-      .dev, .research {
-        font-size: 13em;
-        margin-top: -260px;
-        margin-left: 350px;
-      }
-      .youtube {
-        font-size: 15em;
-        margin-top: 70px;
-        margin-left: 30px;
-      }
-      .dev:before {
-        content: "\e905";
-      }
-      .youtube:before {
-        content: "\e906";
-      }
-      .research:before {
-        content: "\e904";
-      }
-
-      @media (max-width: 640px) {
-        .content-bg {
-          font-size: 10em;
-          left: 50%;
-          margin-left: -80px;
-        }
-
-        .dev, .research {
-          margin-top: -200px;
-        }
-        .youtube {
-          margin-top: 45px;
-        }
-      }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <header>
-        <h1>DrXCheng</h1>
-      </header>
+    <header>
+      <h1>DrXCheng</h1>
+    </header>
 
-      <section class="row intro">
+    <div class="container">
+
+      <section class="intro">
         <div class="hidden-egg"></div>
         <div class="avatar" id="avatar" onclick="clickAvatar()"></div>
         <p>Hi, I am Xu Cheng, aka. DrXCheng.</p>
       </section>
 
-      <section class="row">
-        <div class="content content-left">
+      <section class="dev text-on-left">
+        <div class="content">
           <p>I design and develop websites and web applications using state-of-the-art technologies. <span class="em">I am available for part-time small-medium size projects</span>.</p>
           <p>My recent skill sets: <span class="skill-set">HTML/CSS, Python, PHP, JavaScript, Swift, MySQL, PostgreSQL, AWS, etc</span>.</p>
         </div>
-        <div class="content-bg dev"></div>
+        <div class="content-bg"></div>
       </section>
 
-      <section class="row">
-        <div class="content-bg youtube"></div>
-        <div class="content content-right">
+      <section class="youtube text-on-right">
+        <div class="content">
           <p>I play puzzle game and card game, and upload gameplay and walkthrough videos to YouTube. My channel has over <span class="em">8M</span> total views, <span class="em">500K</span> monthly views, and over <span class="em">5K</span> subscribers. I have also obtained YouTube certification on audience growth.</p>
           <p>I do mobile gaming video creating and promotion. <span class="em">If you are a mobile game developer, I can help you grow</span>. Please contact me for a quote.</p>
         </div>
+        <div class="content-bg"></div>
       </section>
 
-      <section class="row">
-        <div class="content content-left">
+      <section class="research text-on-left">
+        <div class="content">
           <p>I was born in China, and I live in Vancouver, Canada.</p>
           <p>I came to Canada to complete my MSc and PhD in Computing Science at <a href="http://www.sfu.ca">SFU</a>. My research topics were networking and data mining. I have <a href="https://scholar.google.ca/citations?user=pb3o7bUAAAAJ">published</a> over 20 journal and conference papers, attracting more than 1000 citations.</p>
         </div>
-        <div class="content-bg research"></div>
+        <div class="content-bg"></div>
       </section>
-
-      <footer>
-        <span>Can you find an Easter Egg on this page? <em>Hint: avatar.</em></span>
-
-        <ul class="social">
-          <a href="mailto:xu@drxcheng.com" target="_blank"><li><i class="fa fa-envelope"></i></li></a>
-          <a href="https://twitter.com/drxcheng" target="_blank"><li><i class="fa fa-twitter"></i></li></a>
-          <a href="https://ca.linkedin.com/in/drxcheng" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
-          <a href="https://github.com/drxcheng" target="_blank"><li><i class="fa fa-github"></i></li></a>
-          <a href="https://www.youtube.com/user/drxcheng" target="_blank"><li><i class="fa fa-youtube"></i></li></a>
-        </ul>
-
-        <section class="copyright">Copyright © 2016 DrXCheng</section>
-      </footer>
     </div>
+
+    <footer>
+      <span>Can you find an Easter Egg on this page? <em>Hint: avatar.</em></span>
+
+      <ul class="social">
+        <a href="mailto:xu@drxcheng.com" target="_blank"><li><i class="fa fa-envelope"></i></li></a>
+        <a href="https://twitter.com/drxcheng" target="_blank"><li><i class="fa fa-twitter"></i></li></a>
+        <a href="https://ca.linkedin.com/in/drxcheng" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
+        <a href="https://github.com/drxcheng" target="_blank"><li><i class="fa fa-github"></i></li></a>
+        <a href="https://www.youtube.com/user/drxcheng" target="_blank"><li><i class="fa fa-youtube"></i></li></a>
+      </ul>
+
+      <section class="copyright">Copyright © 2016 DrXCheng</section>
+    </footer>
   </body>
 
   <script>

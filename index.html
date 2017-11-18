@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="KHMf5jnb9wqCkcQSJ2jT9EOi3bBONCpZ9TS61bDiAdc" />
-    <title>DrXCheng</title>
+    <title>DrXCheng - A Digital Poet</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic,500" rel="stylesheet" type="text/css">
@@ -37,14 +37,14 @@
       body, p {
         background-color: rgba(250, 250, 250, 0);
         font-family: 'Fira Sans', sans-serif;
-        font-size: 16px;
+        font-size: 1em;
         font-weight: 300;
         color: #202020;
         margin: 0;
         padding: 0;
       }
       p + p {
-        margin-top: 20px;
+        margin-top: 1.25em;
       }
       a {
         text-decoration: none;
@@ -62,14 +62,18 @@
 
       header h1 {
         font-size: 4em;
-        text-shadow: 0 2px 5px #202020;
+        text-shadow: 0 .1rem .3rem #202020;
         text-align: center;
         line-height: 2em;
         margin: 0;
       }
 
+      .container-small {
+        display: none;
+      }
+
       .container {
-        max-width: 620px;
+        width: 38em;
         margin: 0 auto;
       }
 
@@ -81,24 +85,20 @@
       }
 
       .avatar {
-        margin: 40px auto;
+        margin: 2.5em auto;
         width: 8em;
         height: 8em;
-        -webkit-border-radius: 50%;
-           -moz-border-radius: 50%;
-                border-radius: 50%;
+        border-radius: 50%;
         background-image: url(pic.jpg);
         background-size: 8em 8em, cover;
         cursor: pointer;
-        -webkit-transition: all .5s ease-in;
-           -moz-transition: all .5s ease-in;
-                transition: all .5s ease-in;
+        transition: all .5s ease-in;
       }
 
       .hidden-egg {
         background-image: url(easter-egg.jpg);
-        width: 0px;
-        height: 0px;
+        width: 0;
+        height: 0;
       }
       .easter-egg {
         background-image: url(easter-egg.jpg);
@@ -107,21 +107,23 @@
       .intro p {
         width: 100%;
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 2em;
+        padding: 0 2em;
+        box-sizing: border-box;
+        line-height: 1.75em;
       }
 
       .content {
-        width: 380px;
-        padding: 40px 0;
-        font-size: 1.2em;
+        width: 23em;
+        padding: 2.5em 0;
         line-height: 2em;
         text-align: justify;
       }
       .text-on-left .content {
-        margin-right: 240px;
+        margin-right: 15em;
       }
       .text-on-right .content {
-        margin-left: 240px;
+        margin-left: 15em;
       }
 
       .skill-set {
@@ -133,18 +135,18 @@
         color: #fefefe;
         font-weight: 100;
         text-align: center;
-        padding: 40px 0;
+        padding: 2.5em 0;
       }
       footer span {
         display: block;
         font-size: 0.8em;
-        margin-bottom: 40px;
+        margin-bottom: 2.5em;
       }
       footer ul {
         list-style: none;
-        margin: 0 auto 40px;
+        margin: 0 auto 2.5em;
         padding: 0;
-        width: 360px;
+        width: 23em;
         display: flex;
         justify-content: space-around;
       }
@@ -153,13 +155,9 @@
         color: #fefefe;
         width: 3em;
         height: 3em;
-        border: 2px solid #fefefe;
-        -webkit-border-radius: 50%;
-           -moz-border-radius: 50%;
-                border-radius: 50%;
-        -webkit-transition: all .2s ease-in;
-           -moz-transition: all .2s ease-in;
-                transition: all .2s ease-in;
+        border: 2px solid #fefefe;;
+        border-radius: 50%;
+        transition: all .2s ease-in;
       }
       footer ul li i.fa {
         font-size: 1.5em;
@@ -213,7 +211,7 @@
         left: 0;
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 40em) {
         header h1 {
           font-size: 3em;
           line-height: 2em;
@@ -225,29 +223,22 @@
         }
 
         .avatar {
-          margin: 30px auto;
+          margin: 2em auto;
           width: 5em;
           height: 5em;
-          -webkit-border-radius: 50%;
-             -moz-border-radius: 50%;
-                  border-radius: 50%;
+          border-radius: 50%;
           background-size: 5em 5em, cover;
-        }
-        .intro p {
-          width: 100%;
-          text-align: center;
-          margin-bottom: 30px;
         }
 
         .content {
           width: 100%;
-          margin: 0px !important;
-          padding: 30px 0;
+          margin: 0 !important;
+          padding: 2em 0;
           font-size: 1.1em;
           line-height: 1.75em;
         }
         .content p {
-          padding: 0 30px;
+          padding: 0 2em;
         }
         .content-bg {
           font-size: 10em;
@@ -257,9 +248,9 @@
         }
       }
 
-      @media (max-width: 360px) {
+      @media (max-width: 24em) {
         footer ul {
-          margin: 0 auto 30px;
+          margin: 0 auto 2em;
           padding: 0 1em;
           width: 100%;
           box-sizing: border-box;
@@ -272,6 +263,26 @@
           font-size: 1em;
         }
       }
+
+      @media only screen and (max-device-width: 15em) {
+        header, .container, footer {
+          display: none;
+        }
+
+        .container-small {
+          position: absolute;
+          top: 45%;
+          right: 1em;
+          left: 1em;
+          display: block;
+        }
+
+        .digital-poet {
+          width: 100%;
+          font-style: italic;
+          text-align: right;
+        }
+      }
     </style>
   </head>
 
@@ -280,25 +291,30 @@
       <h1>DrXCheng</h1>
     </header>
 
+    <div class="container-small">
+      <div>Use<br> a<br> bigger<br> screen,<br> will ya?<br></div>
+      <div class="digital-poet"><br>- a digital poet</div>
+    </div>
+
     <div class="container">
 
       <section class="intro">
         <div class="hidden-egg"></div>
         <div class="avatar" id="avatar" onclick="clickAvatar()"></div>
-        <p>Hi, I am Xu Cheng, aka. DrXCheng.</p>
+        <p>Hi, I am Xu Cheng, aka. DrXCheng, a digital poet.</p>
       </section>
 
       <section class="dev text-on-left">
         <div class="content">
           <p>I design and develop websites and web applications using state-of-the-art technologies. <span class="em">I am available for small size projects</span>.</p>
-          <p>My recent skill sets: <span class="skill-set">HTML/CSS, JavaScript, PHP, Python, MySQL, PostgreSQL, MongoDB, AWS, etc</span>.</p>
+          <p>My recent skill sets: <span class="skill-set">Web development (HTML/CSS, JavaScript), iOS development (Apache Cordova, Swift), Server-side development (Python, PostgreSQL, MySQL), AWS, etc</span>.</p>
         </div>
         <div class="content-bg"></div>
       </section>
 
       <section class="youtube text-on-right">
         <div class="content">
-          <p>I play puzzle game and card game, and upload gameplay and walkthrough videos to YouTube. My channel has over <span class="em">10M</span> total views and <span class="em">6K</span> subscribers. I have also obtained YouTube certification on audience growth.</p>
+          <p>I play puzzle game and card game, and upload gameplay and walkthrough videos to YouTube. My channel has over <span class="em">12M</span> total views and <span class="em">7K</span> subscribers. I have also obtained YouTube certification on audience growth.</p>
           <p>I do mobile gaming video creation and promotion. <span class="em">If you are a mobile game developer, I can help you grow</span>. Please <a class="em" href="mailto:xu@drxcheng.com" target="_blank">contact me</a> if you are interest.</p>
         </div>
         <div class="content-bg"></div>
@@ -307,7 +323,7 @@
       <section class="research text-on-left">
         <div class="content">
           <p>I was born in China, and reside in Vancouver, Canada.</p>
-          <p>I came to Canada to complete my MSc and PhD in Computing Science at <a href="http://www.sfu.ca" target="_blank">SFU</a>. My research topics were networking and data mining. I have <a href="https://scholar.google.ca/citations?user=pb3o7bUAAAAJ" target="_blank">published</a> over 20 journal and conference papers, attracting more than 1300 citations.</p>
+          <p>I came to Canada to complete my MSc and PhD in Computing Science at <a href="http://www.sfu.ca" target="_blank">SFU</a>. My research topics were networking and data mining. I have <a class="em" href="https://scholar.google.ca/citations?user=pb3o7bUAAAAJ" target="_blank">published</a> over 20 journal and conference papers, attracting more than 1300 citations.</p>
         </div>
         <div class="content-bg"></div>
       </section>
@@ -321,11 +337,11 @@
         <a href="https://twitter.com/drxcheng" target="_blank"><li><i class="fa fa-twitter"></i></li></a>
         <a href="https://ca.linkedin.com/in/drxcheng" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
         <a href="https://github.com/drxcheng" target="_blank"><li><i class="fa fa-github"></i></li></a>
-        <a href="http://simplefe.tips/" target="_blank"><li><i class="fa fa-wordpress"></i></li></a>
+        <!-- <a href="http://simplefe.tips/" target="_blank"><li><i class="fa fa-wordpress"></i></li></a> -->
         <a href="https://www.youtube.com/user/drxcheng" target="_blank"><li><i class="fa fa-youtube"></i></li></a>
       </ul>
 
-      <section class="copyright">Copyright © 2016 DrXCheng</section>
+      <section class="copyright">Copyright © 2017 DrXCheng</section>
     </footer>
   </body>
 

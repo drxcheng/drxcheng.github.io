@@ -9,31 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic,500" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" rel="stylesheet" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <style>
-      @font-face {
-        font-family: 'icomoon';
-        src: url('fonts/icomoon.eot?6gigsx');
-        src: url('fonts/icomoon.eot?6gigsx#iefix') format('embedded-opentype'),
-             url('fonts/icomoon.ttf?6gigsx') format('truetype'),
-             url('fonts/icomoon.woff?6gigsx') format('woff'),
-             url('fonts/icomoon.svg?6gigsx#icomoon') format('svg');
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      [class^="icon-"], [class*=" icon-"] {
-        font-family: 'icomoon' !important;
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
       body, p {
         background-color: rgba(250, 250, 250, 0);
         font-family: 'Fira Sans', sans-serif;
@@ -113,17 +90,15 @@
         line-height: 1.75em;
       }
 
+      .contentContainer {
+        display: flex;
+        padding: 2.5em 0;
+      }
+
       .content {
         width: 23em;
-        padding: 2.5em 0;
         line-height: 2em;
         text-align: justify;
-      }
-      .text-on-left .content {
-        margin-right: 15em;
-      }
-      .text-on-right .content {
-        margin-left: 15em;
       }
 
       .skill-set {
@@ -159,9 +134,9 @@
         border-radius: 50%;
         transition: all .2s ease-in;
       }
-      footer ul li i.fa {
+      footer ul li i {
         font-size: 1.5em;
-        line-height: 2em;
+        line-height: 2em !important;
       }
       footer ul li:hover {
         color: #b5b5b5;
@@ -174,41 +149,18 @@
       }
 
       .content-bg {
-        font-family: 'icomoon';
-        font-size: 13em;
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        font-size: 10em;
         color: #b5b5b5;
-        height: 1em;
-        width: 1em;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto 0;
         z-index: -1;
         opacity: 0.3;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      .dev .content-bg:before {
-        content: "\e905";
-      }
-      .youtube .content-bg:before {
-        content: "\e906";
-      }
-      .research .content-bg:before {
-        content: "\e904";
-      }
-      .text-on-left .content-bg {
-        right: 0;
-      }
-      .text-on-right .content-bg {
-        left: 0;
+      .text-on-right {
+        flex-direction: row-reverse;
       }
 
       @media (max-width: 40em) {
@@ -217,34 +169,39 @@
           line-height: 2em;
         }
 
+        .intro p {
+          margin-bottom: 1em;
+        }
+
         .container {
           width: 100%;
           margin: 0;
         }
 
         .avatar {
-          margin: 2em auto;
+          margin: 2em auto 1em;
           width: 5em;
           height: 5em;
           border-radius: 50%;
           background-size: 5em 5em, cover;
         }
 
+        .contentContainer {
+          padding: 1em;
+        }
         .content {
           width: 100%;
           margin: 0 !important;
-          padding: 2em 0;
           font-size: 1.1em;
           line-height: 1.75em;
         }
-        .content p {
-          padding: 0 2em;
-        }
         .content-bg {
-          font-size: 10em;
+          font-size: 8em;
+          position: absolute;
+          top: 0;
           right: 0;
+          bottom: 0;
           left: 0;
-          margin: auto;
         }
       }
 
@@ -259,12 +216,12 @@
           width: 2em;
           height: 2em;
         }
-        footer ul li i.fa {
+        footer ul li i {
           font-size: 1em;
         }
       }
 
-      @media only screen and (max-device-width: 15em) {
+      @media only screen and (max-width: 15em) {
         header, .container, footer {
           display: none;
         }
@@ -304,28 +261,34 @@
         <p>Hi, I am Xu Cheng, aka. DrXCheng, a digital poet.</p>
       </section>
 
-      <section class="dev text-on-left">
+      <section class="contentContainer text-on-left">
         <div class="content">
           <p>I design and develop websites and web applications using state-of-the-art technologies. <span class="em">I am available for small size projects</span>.</p>
-          <p>My recent skill sets: <span class="skill-set">Web development (HTML/CSS, JavaScript), iOS development (Apache Cordova, Swift), Server-side development (Python, PostgreSQL, MySQL), AWS, etc</span>.</p>
+          <p>My recent skill sets: <span class="skill-set">Web development (HTML/CSS, JavaScript, various frameworks), iOS development (Apache Cordova, Swift), Server-side development (Python, PostgreSQL, MySQL), AWS, etc</span>.</p>
         </div>
-        <div class="content-bg"></div>
+        <div class="content-bg">
+          <i class="fas fa-code"></i>
+        </div>
       </section>
 
-      <section class="youtube text-on-right">
+      <section class="contentContainer text-on-right">
         <div class="content">
-          <p>I play puzzle game and card game, and upload gameplay and walkthrough videos to YouTube. My channel has over <span class="em">13M</span> total views and <span class="em">8K</span> subscribers. I have also obtained YouTube certification on audience growth.</p>
-          <p>I do mobile gaming video creation and promotion. <span class="em">If you are a mobile game developer, I can help you grow</span>. Please <a class="em" href="mailto:xu@drxcheng.com" target="_blank">contact me</a> if you are interest.</p>
+          <p>I am a casual gamer. I upload my gameplay videos to YouTube channel, which has over <span class="em">13M</span> total views and <span class="em">8K</span> subscribers.</p>
+          <p>I have also obtained YouTube certification on audience growth.</p>
         </div>
-        <div class="content-bg"></div>
+        <div class="content-bg">
+            <i class="fab fa-youtube"></i>
+        </div>
       </section>
 
-      <section class="research text-on-left">
+      <section class="contentContainer text-on-left">
         <div class="content">
-          <p>I was born in China, and reside in Vancouver, Canada.</p>
-          <p>I came to Canada to complete my MSc and PhD in Computing Science at <a href="http://www.sfu.ca" target="_blank">SFU</a>. My research topics were networking and data mining. I have <a class="em" href="https://scholar.google.ca/citations?user=pb3o7bUAAAAJ" target="_blank">published</a> over 20 journal and conference papers, attracting more than 1500 citations.</p>
+          <p>I was born in China, and reside in Coquitlam (Metro Vancouver), Canada.</p>
+          <p>I came to Canada to complete my MSc and PhD in Computing Science at <a href="http://www.sfu.ca" target="_blank">Simon Fraser University</a>. My research topics were networking and data mining. I have <a class="em" href="https://scholar.google.ca/citations?user=pb3o7bUAAAAJ" target="_blank">published</a> over 20 journal and conference papers, attracting more than 1500 citations.</p>
         </div>
-        <div class="content-bg"></div>
+        <div class="content-bg">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
       </section>
     </div>
 
@@ -333,15 +296,14 @@
       <span>Can you find an Easter Egg on this page? <em>Hint: avatar.</em></span>
 
       <ul class="social">
-        <a href="mailto:xu@drxcheng.com" target="_blank"><li><i class="fa fa-envelope"></i></li></a>
-        <a href="https://twitter.com/drxcheng" target="_blank"><li><i class="fa fa-twitter"></i></li></a>
-        <a href="https://ca.linkedin.com/in/drxcheng" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
-        <a href="https://github.com/drxcheng" target="_blank"><li><i class="fa fa-github"></i></li></a>
-        <!-- <a href="http://simplefe.tips/" target="_blank"><li><i class="fa fa-wordpress"></i></li></a> -->
-        <a href="https://www.youtube.com/user/drxcheng" target="_blank"><li><i class="fa fa-youtube"></i></li></a>
+        <a href="mailto:xu@drxcheng.com" target="_blank"><li><i class="fas fa-envelope"></i></li></a>
+        <a href="https://twitter.com/drxcheng" target="_blank"><li><i class="fab fa-twitter"></i></li></a>
+        <a href="https://ca.linkedin.com/in/drxcheng" target="_blank"><li><i class="fab fa-linkedin"></i></li></a>
+        <a href="https://github.com/drxcheng" target="_blank"><li><i class="fab fa-github"></i></li></a>
+        <a href="https://www.youtube.com/user/drxcheng" target="_blank"><li><i class="fab fa-youtube"></i></li></a>
       </ul>
 
-      <section class="copyright">Copyright © 2017 DrXCheng</section>
+      <section class="copyright">Copyright © 2018 DrXCheng</section>
     </footer>
   </body>
 

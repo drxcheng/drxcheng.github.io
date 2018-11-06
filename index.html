@@ -273,7 +273,7 @@
 
       <section class="contentContainer text-on-right">
         <div class="content">
-          <p>I am a casual gamer. I upload my gameplay videos to YouTube channel, which has over <span class="em">13M</span> total views and <span class="em">8K</span> subscribers.</p>
+          <p>I am a casual gamer. I upload my gameplay videos to YouTube channel, which has over <span class="em">15M</span> total views and <span class="em">10K</span> subscribers.</p>
           <p>I have also obtained YouTube certification on audience growth.</p>
         </div>
         <div class="content-bg">
@@ -317,12 +317,12 @@
   </script>
 
   <script>
-    var TARGET = 7;
-    var clickCount = 0;
-    var avatar = document.getElementById('avatar');
-    var defaultClass = avatar.className;
+    const TARGET = 7;
+    let clickCount = 0;
+    const avatar = document.getElementById('avatar');
+    const defaultClass = avatar.className;
 
-    var clickAvatar = function () {
+    const clickAvatar = () => {
       clickCount++;
 
       if (clickCount >= TARGET) {

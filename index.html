@@ -1,8 +1,9 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Home page for Xu Cheng">
     <meta name="google-site-verification" content="KHMf5jnb9wqCkcQSJ2jT9EOi3bBONCpZ9TS61bDiAdc" />
     <title>DrXCheng - A Digital Poet</title>
     <link rel="shortcut icon" href="favicon.ico">
@@ -11,38 +12,37 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" rel="stylesheet" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <style>
-      body, p {
+      body {
         background-color: rgba(250, 250, 250, 0);
         font-family: 'Fira Sans', sans-serif;
-        font-size: 1em;
+        font-size: 1rem;
         font-weight: 300;
         color: #202020;
         margin: 0;
         padding: 0;
       }
+      p {
+        font-size: 1.125em;
+      }
       p + p {
         margin-top: 1.25em;
       }
       a {
-        text-decoration: none;
         color: #717171;
       }
       .em {
         font-weight: 500;
       }
-      a.em {
-        text-decoration: underline;
-      }
 
       header {
-        background-color: #e54a19;
+        background-color: #2a9d8f;
         font-family: 'Varela Round', sans-serif;
         color: #fefefe;
       }
 
       header h1 {
         font-size: 4em;
-        text-shadow: 0 .1rem .3rem #202020;
+        text-shadow: 0 .1em .3em #202020;
         text-align: center;
         line-height: 2em;
         margin: 0;
@@ -71,17 +71,6 @@
         border-radius: 50%;
         background-image: url(pic.jpg);
         background-size: 8em 8em, cover;
-        cursor: pointer;
-        transition: all .5s ease-in;
-      }
-
-      .hidden-egg {
-        background-image: url(easter-egg.jpg);
-        width: 0;
-        height: 0;
-      }
-      .easter-egg {
-        background-image: url(easter-egg.jpg);
       }
 
       .intro p {
@@ -109,7 +98,7 @@
       }
 
       footer {
-        background-color: #202020;
+        background-color: #264653;
         color: #fefefe;
         font-weight: 100;
         text-align: center;
@@ -128,12 +117,12 @@
         display: flex;
         justify-content: space-around;
       }
-      footer ul li {
+      footer ul li a {
         display: block;
         color: #fefefe;
         width: 3em;
         height: 3em;
-        border: 2px solid #fefefe;;
+        border: 2px solid #fefefe;
         border-radius: 50%;
         transition: all .2s ease-in;
       }
@@ -141,14 +130,14 @@
         font-size: 1.5em;
         line-height: 2em !important;
       }
-      footer ul li:hover {
+      footer ul li a:hover {
         color: #b5b5b5;
         border: 2px solid #b5b5b5;
       }
 
       footer .copyright {
         font-family: 'Roboto Slab', serif;
-        font-size: .8em;
+        font-size: 1em;
       }
 
       .content-bg {
@@ -208,7 +197,7 @@
         }
       }
 
-      @media (max-width: 24em) {
+      @media (max-width: 24rem) {
         footer ul {
           margin: 0 auto 2em;
           padding: 0 1em;
@@ -224,7 +213,7 @@
         }
       }
 
-      @media only screen and (max-width: 15em) {
+      @media only screen and (max-width: 15rem) {
         header, .container, footer {
           display: none;
         }
@@ -256,57 +245,75 @@
       <div class="digital-poet"><br>- a digital poet</div>
     </div>
 
-    <div class="container">
-
+    <main class="container">
       <section class="intro">
-        <div class="hidden-egg"></div>
-        <div class="avatar" id="avatar" onclick="clickAvatar()"></div>
-        <p>Hi, I am Xu Cheng, aka. DrXCheng, a digital poet.</p>
+        <div class="avatar"></div>
+        <p>
+          Hi, I am Xu Cheng, aka. DrXCheng, a digital poet, accessibility (a11y) advocate.
+          <br />
+          I use the pronoun he/him/his.
+        </p>
       </section>
 
       <section class="contentContainer text-on-left">
         <div class="content">
-          <p>I develop websites and web applications using state-of-the-art technologies. <span class="em">I am available for small size projects</span>.</p>
-          <p>My recent skill sets: <span class="skill-set">Web development (HTML/CSS, JavaScript/TypeScript, React, Vue), iOS development (Apache Cordova, Swift), Server-side development (Python, PostgreSQL, MySQL), AWS, etc</span>.</p>
+          <h2 id="header-profession">Profession</h2>
+          <p>
+            I develop accessible websites and web apps with state-of-the-art technologies.
+            <span class="em">I am available for small size projects.</span>
+          </p>
+          <p>
+            My recent skill sets: <span class="skill-set">Web development (HTML/CSS, JavaScript/TypeScript, React, Vue),
+            iOS development (Apache Cordova, Swift), Server-side development (Python, PostgreSQL, MySQL), AWS, etc.</span>
+          </p>
         </div>
         <div class="content-bg">
-          <i class="fas fa-code"></i>
+          <i class="fas fa-code" aria-describedby="header-profession"></i>
         </div>
       </section>
 
       <section class="contentContainer text-on-right">
         <div class="content">
-          <p>I was born in China, and reside in Coquitlam (Metro Vancouver), Canada.</p>
-          <p>I came to Canada to complete my MSc and PhD in Computing Science at <a href="http://www.sfu.ca" target="_blank">Simon Fraser University</a>. My research topics were networking and data mining. I have <a class="em" href="https://scholar.google.ca/citations?user=pb3o7bUAAAAJ" target="_blank">published</a> over 20 journal and conference papers, attracting more than 1600 citations.</p>
+          <h2 id="header-academia">Academia</h2>
+          <p>I was born in China and am living in Metro Vancouver, Canada.</p>
+          <p>
+            I came to Canada to complete my MSc and Ph.D. in Computing Science at Simon Fraser University.
+            My research topics were networking and data mining. I have published over 20 journal and conference papers,
+            attracting more than 1800 citations
+            (<a href="https://scholar.google.ca/citations?user=pb3o7bUAAAAJ" target="_blank">Google Scholar</a>).
+          </p>
         </div>
         <div class="content-bg">
-          <i class="fas fa-graduation-cap"></i>
+          <i class="fas fa-graduation-cap" aria-describedby="header-academia"></i>
         </div>
       </section>
 
       <section class="contentContainer text-on-left">
         <div class="content">
-          <p>I am a casual gamer. I upload my gameplay videos to YouTube channel, which has over <span class="em">16M</span> total views and <span class="em">11K</span> subscribers.</p>
-          <p>I have also obtained YouTube certification on audience growth.</p>
+          <h2 id="header-leisure">Leisure</h2>
+          <p>
+            I am a casual gamer. I upload my gameplay videos to the YouTube channel, which has over
+            <span class="em">16M</span> total views and <span class="em">11K</span> subscribers.
+          </p>
+          <p>I have also obtained a YouTube certification on audience growth.</p>
         </div>
         <div class="content-bg">
-            <i class="fab fa-youtube"></i>
+            <i class="fab fa-youtube" aria-describedby="header-leisure"></i>
         </div>
       </section>
-    </div>
+    </main>
 
     <footer>
-      <span>Can you find an Easter Egg on this page? <em>Hint: avatar.</em></span>
-
       <ul class="social">
-        <a href="mailto:xu@drxcheng.com" target="_blank"><li><i class="fas fa-envelope"></i></li></a>
-        <a href="https://twitter.com/drxcheng" target="_blank"><li><i class="fab fa-twitter"></i></li></a>
-        <a href="https://ca.linkedin.com/in/drxcheng" target="_blank"><li><i class="fab fa-linkedin"></i></li></a>
-        <a href="https://github.com/drxcheng" target="_blank"><li><i class="fab fa-github"></i></li></a>
-        <a href="https://www.youtube.com/user/drxcheng" target="_blank"><li><i class="fab fa-youtube"></i></li></a>
+        <li><a href="mailto:xu@drxcheng.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+        <li><a href="https://twitter.com/drxcheng" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://ca.linkedin.com/in/drxcheng" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/drxcheng" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://drxcheng.medium.com/" target="_blank" aria-label="Medium"><i class="fas fa-book"></i></a></li>
+        <li><a href="https://www.youtube.com/user/drxcheng" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
       </ul>
 
-      <section class="copyright">Copyright © 2019 DrXCheng</section>
+      <section class="copyright">Copyright © 2020 DrXCheng</section>
     </footer>
   </body>
 
@@ -317,23 +324,5 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-1412705-8', 'auto');
     ga('send', 'pageview');
-  </script>
-
-  <script>
-    const TARGET = 7;
-    let clickCount = 0;
-    const avatar = document.getElementById('avatar');
-    const defaultClass = avatar.className;
-
-    const clickAvatar = () => {
-      clickCount++;
-
-      if (clickCount >= TARGET) {
-        avatar.className += ' easter-egg';
-        clickCount = 0;
-      } else if (clickCount === 1) {
-        avatar.className = defaultClass;
-      }
-    }
   </script>
 </html>

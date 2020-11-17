@@ -246,8 +246,8 @@
     </div>
 
     <main class="container">
-      <section class="intro">
-        <div class="avatar"></div>
+      <section class="intro" aria-label="introduction">
+        <div class="avatar" aria-label="DrXCheng's photo"></div>
         <p>
           Hi, I am Xu Cheng, aka. DrXCheng, a digital poet, accessibility (a11y) advocate.
           <br />
@@ -255,7 +255,7 @@
         </p>
       </section>
 
-      <section class="contentContainer text-on-left">
+      <section class="contentContainer text-on-left" aria-labelledby="header-profession">
         <div class="content">
           <h2 id="header-profession">Profession</h2>
           <p>
@@ -272,7 +272,7 @@
         </div>
       </section>
 
-      <section class="contentContainer text-on-right">
+      <section class="contentContainer text-on-right" aria-labelledby="header-academia">
         <div class="content">
           <h2 id="header-academia">Academia</h2>
           <p>I was born in China and am living in Metro Vancouver, Canada.</p>
@@ -288,7 +288,7 @@
         </div>
       </section>
 
-      <section class="contentContainer text-on-left">
+      <section class="contentContainer text-on-left" aria-labelledby="header-leisure">
         <div class="content">
           <h2 id="header-leisure">Leisure</h2>
           <p>
@@ -304,16 +304,18 @@
     </main>
 
     <footer>
-      <ul class="social">
-        <li><a href="mailto:xu@drxcheng.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
-        <li><a href="https://twitter.com/drxcheng" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="https://ca.linkedin.com/in/drxcheng" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="https://github.com/drxcheng" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-        <li><a href="https://drxcheng.medium.com/" target="_blank" aria-label="Medium"><i class="fas fa-book"></i></a></li>
-        <li><a href="https://www.youtube.com/user/drxcheng" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
-      </ul>
+      <nav>
+        <ul class="social">
+          <li><a href="mailto:xu@drxcheng.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+          <li><a href="https://twitter.com/drxcheng" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://ca.linkedin.com/in/drxcheng" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/drxcheng" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://drxcheng.medium.com/" target="_blank" aria-label="Medium"><i class="fas fa-book"></i></a></li>
+          <li><a href="https://www.youtube.com/user/drxcheng" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </nav>
 
-      <section class="copyright">Copyright © 2020 DrXCheng</section>
+      <div class="copyright">Copyright © 2020 DrXCheng</div>
     </footer>
   </body>
 

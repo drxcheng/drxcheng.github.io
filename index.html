@@ -90,7 +90,6 @@
       .content {
         width: 23em;
         line-height: 2em;
-        text-align: justify;
       }
 
       .skill-set {
@@ -216,26 +215,6 @@
           font-size: 1em;
         }
       }
-
-      @media only screen and (max-width: 15rem) {
-        header, .container, footer {
-          display: none;
-        }
-
-        .container-small {
-          position: absolute;
-          top: 45%;
-          right: 1em;
-          left: 1em;
-          display: block;
-        }
-
-        .digital-poet {
-          width: 100%;
-          font-style: italic;
-          text-align: right;
-        }
-      }
     </style>
   </head>
 
@@ -244,14 +223,9 @@
       <h1>DrXCheng</h1>
     </header>
 
-    <div class="container-small">
-      <div>Use<br> a<br> bigger<br> screen,<br> will ya?<br></div>
-      <div class="digital-poet"><br>- a digital poet</div>
-    </div>
-
     <main class="container">
       <section class="intro" aria-label="introduction">
-        <div class="avatar" aria-label="DrXCheng's photo"></div>
+        <div class="avatar" role="img" aria-label="DrXCheng's photo"></div>
         <p>
           Hi, I am Xu Cheng, aka. DrXCheng, a digital poet, accessibility (a11y) advocate.
           <br />
@@ -283,9 +257,9 @@
           <p>
             I came to Canada to complete my MSc and Ph.D. in Computing Science at Simon Fraser University.
             My research topics were networking and data mining. I have published over 20 journal and conference papers,
-            attracting more than 1800 citations
+            attracting more than 2000 citations
             (<a href="https://scholar.google.ca/citations?user=pb3o7bUAAAAJ" target="_blank" rel="noopener">Google Scholar
-            <i class="fas fa-external-link-alt open-new-tab-icon" aria-label="(open in a new tab)"></i></a>).
+            <i class="fas fa-external-link-alt open-new-tab-icon" role="img" aria-label="(open in a new tab)"></i></a>).
           </p>
         </div>
         <div class="content-bg">
@@ -320,7 +294,7 @@
         </ul>
       </nav>
 
-      <div class="copyright">Copyright © 2020 DrXCheng</div>
+      <div class="copyright">Copyright © 2021 DrXCheng</div>
     </footer>
   </body>
 
